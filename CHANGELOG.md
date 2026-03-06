@@ -1,9 +1,9 @@
 # 2.60.0
 
 Changes:
-* The CMake option `ENABLE_WIN7_COMPAT:BOOLEAN` now defaults to `OFF`
-    * This follows the Windows 7 deprecation notice introduced in v2.57.0
-    * The removal of Win7-compat code, however, is delayed to later version.
+* The CMake option `ENABLE_WIN7_COMPAT:BOOLEAN` is removed
+    * The lowest supported Windows version is now Windows 8.1
+    * Follows the Windows 7 deprecation notice introduced in v2.57.0
 * `wm.detectPlugin` now defaults to `true` (WM)
 
 Features:
@@ -94,7 +94,7 @@ Deprecation notice:
 * Support for Windows 7 (and 8.x) is deprecated and will be removed in a future release. Extended support for Windows 7 (and 8.1) ended on January 10, 2023. These versions do not officially support ANSI escape codes (running fastfetch on them requires a third-party terminal such as ConEmu). In addition, Windows 7 lacks some APIs used by fastfetch. Fastfetch currently loads these APIs dynamically at runtime to maintain compatibility, but this adds complexity to the codebase and increases the maintenance burden.
     * A CMake flag `ENABLE_WIN7_COMPAT:BOOLEAN` has been introduced (defaults to `ON` for now). If set to `OFF`, Windows 7 compatibility code is excluded, and the resulting binaries will support only Windows 10 (version 1607 and later) and Windows 11.
     * The main prebuilt Windows binaries on the Release page (`fastfetch-windows-amd64.*`) are built with `ENABLE_WIN7_COMPAT=OFF`. These are the binaries used by `scoop` and `winget`. Users who need Windows 7 (or 8.x) support can download the `-win7` variant instead.
-    * ~~The `ENABLE_WIN7_COMPAT` CMake option and the `-win7` variant binaries are planned to be removed in 2.60.0~~.
+    * The `ENABLE_WIN7_COMPAT` CMake option and the `-win7` variant binaries are planned to be removed in 2.60.0.
 
 Features:
 * Supports COSMIC DE version detection (DE, Linux)
